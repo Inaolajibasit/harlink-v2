@@ -1,5 +1,5 @@
 'use client';
-import { FaCar, FaArrowUp } from 'react-icons/fa';
+import { FaCar, FaArrowUp, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -13,13 +13,11 @@ export default function Footer() {
         {/* Left section */}
         <div className="flex-1 space-y-4">
           <h2 className="text-3xl font-bold">HARLINK</h2>
-          <p>Nigeria's best Logistics and <br /> Shipping Company</p>
+          <p>Shipping. Warehousing. Haulage.<br /> Simplified.</p>
           <div className="flex gap-3">
-            {[...Array(3)].map((_, i) => (
-              <div key={i} className="bg-white text-[#F08825] p-3 rounded-full">
-                <FaCar />
-              </div>
-            ))}
+            <div className="bg-white text-[#F08825] cursor-pointer p-3 rounded-full"> <Link href={'#'}> <FaFacebook /> </Link> </div>
+            <div className="bg-white text-[#F08825] cursor-pointer p-3 rounded-full"> <Link href={'#'}>  <FaLinkedin /> </Link>  </div>
+            <div className="bg-white text-[#F08825] cursor-pointer p-3 rounded-full"> <Link href={'#'}>  <FaTwitter />  </Link> </div>
           </div>
           <p className="text-sm pt-6">© 2025 Harlink Investment</p>
         </div>
@@ -48,15 +46,15 @@ export default function Footer() {
           <div className="space-y-3 text-sm">
             <div>
               <h4 className="font-semibold">Email</h4>
-              <p>harlinkinvestment.com</p>
+              <p>harlinkinvestment@gmail.com</p>
             </div>
             <div>
               <h4 className="font-semibold mt-2">Phone</h4>
-              <p>08080641916</p>
+              <p>08033047379 <br /> 08167202457</p>
             </div>
             <div>
               <h4 className="font-semibold mt-2">Location</h4>
-              <p>44 Egunjobi Street, Lagos, Nigeria</p>
+              <p>34, Rhodes Crescent Apapa Lagos </p>
             </div>
             <p className="pt-3">Website by Inaolaji Basit</p>
           </div>

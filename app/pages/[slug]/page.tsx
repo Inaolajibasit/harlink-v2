@@ -48,9 +48,9 @@ export default function ServiceDetail() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <h1 className="text-4xl w-fit font-light mb-5 py-3 px-5 text-[13px] rounded-full border border-[#F08825]">
+          <h2 className="text-4xl w-fit font-light mb-5 py-3 px-5 text-[13px] rounded-full border border-[#F08825]">
             SERVICE
-          </h1>
+          </h2>
           <h1 className="text-3xl font-bold mb-4">{service.title}</h1>
           <p className="text-gray-500 font-medium mb-8">{service.description}</p>
           <p className="max-w-2xl">{service.details}</p>

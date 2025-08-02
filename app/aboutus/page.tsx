@@ -65,7 +65,7 @@ export default function AboutPage() {
         <div className='flex justify-center gap-2 flex-col md:flex-row'>
             <div className='md:w-[50%] p-3'>
 
-                <motion.h2
+                <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
@@ -73,7 +73,7 @@ export default function AboutPage() {
                 className="text-4xl w-fit font-light mb-5 py-3 px-5 text-[13px] rounded-full border-2 border-[#F08825]"
                 >
                 About Us
-                </motion.h2>
+                </motion.h1>
                 <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

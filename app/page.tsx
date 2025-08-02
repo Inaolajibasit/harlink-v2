@@ -2,13 +2,7 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import HoverCards from "./components/Hovercards";
-import * as Icons from 'react-icons/fa';
-import * as Iconspi from 'react-icons/pi';
-import * as Iconstb from 'react-icons/tb';
-import * as Iconsgr from 'react-icons/gr';
-import * as Iconslia from 'react-icons/lia';
 import Link from 'next/link';
-import CargoShip from "./components/Cargoship";
 import { Button } from "@/components/ui/button"
 import { motion, useAnimation, AnimatePresence  } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -17,22 +11,16 @@ import AnimatedContent from "./blocks/Animations/AnimatedContent/AnimatedContent
 import { BsArrowUpRightCircle, BsTruckFront } from "react-icons/bs";
 import LogoCarousel from "./components/Logocarosel";
 import { useEffect, useState } from "react";
-import { FaChartLine, FaCloud, FaLaptopCode, FaMobileAlt, FaPalette, FaShieldAlt } from "react-icons/fa";
 import { PiShippingContainer, PiWarehouse } from "react-icons/pi";
-import { TbCrane } from "react-icons/tb";
-import { GrDocumentVerified } from "react-icons/gr";
-import { LiaPlaneDepartureSolid } from "react-icons/lia";
-import { GiShipBow } from "react-icons/gi";
 import { FaTruckPlane } from "react-icons/fa6";
-import { BiPlanet } from "react-icons/bi";
+import { BiFile } from "react-icons/bi";
 import CountUp from "./blocks/TextAnimations/CountUp/CountUp";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
-import { footer } from "framer-motion/client";
+} from "@/components/ui/accordion";
 import Footer from "./components/Footer";
 import { FiArrowRight } from "react-icons/fi";
 // import ContactForm from "./components/Contactform";
@@ -67,51 +55,6 @@ const teamData = {
 }
 
 
-const allServices1 = [
-    {
-      title: 'Shipping',
-      image: '/shipingt.jpg',
-      icon: <PiShippingContainer  className="text-4xl text-indigo-500" />,
-      description:
-        'Modern, responsive websites built with best practices and optimized performance.',
-    },
-    {
-      title: 'Custom Bonded Warehousing',
-      image: '/warehouse.jpg',
-      icon: <PiWarehouse  className="text-4xl text-pink-500" />,
-      description:
-        'Beautiful and intuitive interfaces that focus on user experience and accessibility.',
-    },
-    {
-      title: 'Export Processing Terminal (EPT)',
-      image: '/terminal.jpg',
-      icon: <TbCrane className="text-4xl text-green-500" />,
-      description:
-        'Boost your online presence with SEO strategies and data-driven decisions.',
-    },
-    {
-      title: 'Clearing and Forwarding',
-      image: '/paperwork.jpg',
-      icon: <GrDocumentVerified className="text-4xl text-purple-500" />,
-      description:
-        'Cross-platform mobile apps with smooth performance and stunning design.',
-    },
-    {
-      title: 'Haulage',
-      image: '/haulage.jpg',
-      icon: <BsTruckFront className="text-4xl text-blue-500" />,
-      description:
-        'Reliable cloud solutions to scale your infrastructure and reduce downtime.',
-    },
-    {
-      title: 'Import and Export Services',
-      image: '/import.jpg',
-      icon: <LiaPlaneDepartureSolid className="text-4xl text-red-500" />,
-      description:
-        'Protect your data and infrastructure with robust security practices.',
-    },
-  ];
-
 
 export default function Home() {
   const controls = useAnimation();
@@ -126,30 +69,6 @@ export default function Home() {
   const [showMore, setShowMore] = useState(false);
   const displayedServices = showMore ? allServices : allServices.slice(0, 3); 
 
-  // const [showMoreteam, setShowMoreteam] = useState(false);
-  // const displayedTeam = showMoreteam ? teamDetails : teamDetails.slice(0, 3); 
- 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.15,
-        duration: 1.8,
-        type: 'spring',
-        stiffness: 60,
-      },
-    }),
-    exit: { opacity: 0, y: 50, transition: { duration: 0.3 } },
-  };
-
-
-  const fadeIn = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
   
 
   return (
@@ -158,8 +77,7 @@ export default function Home() {
       <main>
         {/* hero section  */}
         <section className="relative  h-screen w-full overflow-hidden rounded-t-[0px] rounded-[0px] bg-black text-white">
-          {/* <Image src="/bg1.jpg" alt="Container image" fill className="object-cover" quality={100} priority /> bg image */}
-          <video autoPlay loop muted playsInline className="absolute inset-0 object-cover w-full h-full z-0 ">
+          <video autoPlay loop muted  playsInline className="absolute inset-0 object-cover w-full h-full z-0 ">
             <source src="/bgvid.mp4" type="video/mp4" />
             your browser does not support the video tag.
           </video>
@@ -169,9 +87,9 @@ export default function Home() {
           {/* Hero Content */}
           <div className="absolute z-20 bottom-10 md:items-start p-3 md:bottom-24 md:left-12 max-w-5xl h-auto flex flex-col justify-end">
             <AnimatedContent delay={1}>
-            <h2 className="md:text-8xl text-4xl md:font-light font-medium mb-7 leading-tight">
+            <h1 className="md:text-8xl text-4xl md:font-light font-medium mb-7 leading-tight">
               Your Trusted Logistics Partner Across Borders
-            </h2>
+            </h1>
             </AnimatedContent>
             <AnimatedContent delay={1.2}>
             <h2 className="md:text-4xl text-[28px] font-light mb-6 leading-tight">
@@ -225,7 +143,7 @@ export default function Home() {
           </div>
           
           <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={inView ? {opacity: 1, y:0} : {}} transition={{duration:0.6}} className="w-[100%] md:w-[60%] h-full relative overflow-hidden rounded-4xl">
-            <Image src="/bg-29.jpg" alt="Container image" fill className="object-cover" quality={100} priority />
+            <Image src="/bg-29.jpg" loading="lazy" alt="bunch of yellow Containers stacked on each other ln apapa lagos " fill className="object-cover" quality={100} priority />
             <div className="absolute inset-0 bg-black/60 z-10" />
             <motion.div  initial={{ opacity: 0, y: -40, scale:0.8 }} animate={inView ? {opacity: 1, y:0, scale:1,} : {}} transition={{duration:0.9}} className="absolute bg-[#ffffff45] z-20 text-white h-auto md:h-[300px] md:bottom-9 md:left-9 md:right-9 bottom-1 left-1 right-1 rounded-4xl backdrop-blur-sm flex justify-start items-end p-3 md:p-7" >
               <h1 className="md:text-[22px] text-[15px] leading-[1.2] md:leading-snug">Harlink Investment is a leading freight forwarding and logistics company based in Lagos Nigeria. With a strong presence across major ports and trade routes, we specialize in shipping, customs clearance, bonded warehousing, haulage, and comprehensive import-export services.  <span className="text-[#f08825] "> Our goal is to simplify trade for businesses of all sizes by offering reliable, end-to-end logistics solutions. </span> </h1>
@@ -284,13 +202,14 @@ export default function Home() {
                         <Image
                           src={service.image}
                           alt={service.title}
+                          loading="lazy"
                           className="absolute hover:scale-[1.1] transition ease-out duration-700 inset-0 w-full h-full object-cover rounded-2xl "
                           fill
                           quality={100}
                           priority
                         />
                         <div className=" backdrop-blur-xs group hover:bg-[#f087251c] transition-all duration-200 ease-in bg-[#ffffff45] text-white p-6 z-10 flex flex-col items-center text-center">
-                          <Image src={service.iconGif} alt="gifff" width={50} height={50} />
+                          <Image src={service.iconGif} loading="lazy" alt="animated icons of harlink lagos port activity " width={50} height={50} />
                           {/* <div className="mb-4 flex justify-center">{service.icon}</div> */}
                           <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                           <p className="text-gray-200 text-sm">{service.description}</p> 
@@ -324,7 +243,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-4xl w-fit font-light mb-5 py-3 px-5 text-[13px] rounded-full border-2 border-[#F08825]"
             >
-              Preparing your Future
+              Compliance
             </motion.h2>
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -333,7 +252,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="md:text-4xl w-fit font-light text-left mb-4 py-3 px-0 text-[18px]"
             >
-              Delivering Excellence Across Industries
+              We are Accredited and Ready to do Business 
             </motion.h2>
 
             <motion.h2
@@ -343,7 +262,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="md:text-[20px] w-fit font-light text-left mb-4 py-3 px-0 text-[18px]"
             >
-              more random word to out here baby let give what you want why you dey form for me baby let me give you what you need but you still dey form for me baby let me give you what you want
+              Harlink Investment is fully registered with all relevant trade and regulatory bodies, including the Nigeria Customs Service, NEPC, and other port authorities. We maintain strict compliance with international shipping and cargo handling standards to ensure your cargo moves without delay
             </motion.h2>
 
             <motion.div
@@ -355,13 +274,13 @@ export default function Home() {
                 <PiWarehouse className="text-4xl text-[#F08825] mr-4" />
                 <PiShippingContainer className="text-4xl text-[#F08825] mr-4" />
                 <FaTruckPlane  className="text-4xl text-[#F08825] mr-4" />
-                <BiPlanet className="text-4xl text-[#F08825] mr-4" />
+                <BiFile className="text-4xl text-[#F08825] mr-4" />
                 
             </motion.div>  
 
           </div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="md:w-[50%] w-full h-[300px] relative rounded-bl-none rounded-b-[30px] md:h-auto md:rounded-r-[30px] bg-amber-300 mx-auto px-4 overflow-hidden ">
-            <Image src="/bg-293.jpg" alt="Container image" fill className="object-cover" quality={100} priority />
+            <Image src="/bg-293.jpg" loading="lazy" alt="empty cargo sitting still on the lagos water" fill className="object-cover" quality={100} priority />
             <div className="absolute inset-0 bg-black/40 z-10" />
           </motion.div>
 
@@ -370,7 +289,7 @@ export default function Home() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 2.5, ease: "easeIn" }}
-            className="origin-left mt-5 rounded-full bottom-0 h-[7px] w-full bg-gray-500"
+            className="origin-left mt-5 md:mt-10 rounded-full bottom-0 h-[7px] w-full bg-gray-500"
           />
           {/* <motion.div
             
@@ -393,8 +312,8 @@ export default function Home() {
                   className="flex flex-col justify-start items-start w-[350px] "
                 >
                   <h1 className=" text-4xl md:text-5xl">Active Clients </h1>
-                  <h2 className=" text-6xl md:text-[7rem] md:leading-22 font-light" ><CountUp from={0} to={500} separator="," direction="up" duration={3} className="count-up-text"  /></h2>
-                  <p className="text-md text-left">We provide best customer tody over the wrold service </p>
+                  <h2 className=" text-6xl md:text-[7rem] md:leading-22 font-light" ><CountUp from={0} to={20} separator="," direction="up" duration={3} className="count-up-text"  />+</h2>
+                  <p className="text-md text-left">We Currently Provide our Services to Over Twenty Organization. </p>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, x: -40 }}
@@ -403,9 +322,9 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="flex flex-col justify-start items-start w-[350px] "
                 >
-                  <h1 className="text-4xl md:text-5xl">Active Clients </h1>
-                  <h2 className="text-6xl md:text-[7rem] md:leading-22 font-light" ><CountUp from={0} to={14} separator="," direction="up" duration={6} className="count-up-text"  />M</h2>
-                  <p className="text-md text-left">We provide best customer service </p>
+                  <h1 className="text-4xl md:text-5xl">Freight Sent</h1>
+                  <h2 className="text-6xl md:text-[7rem] md:leading-22 font-light" ><CountUp from={0} to={200} separator="," direction="up" duration={6} className="count-up-text"  />+</h2>
+                  <p className="text-md text-left">We have Experienced and Qualified Personals Ensuring that your Cargo get to Their Destination </p>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, x: -40 }}
@@ -414,13 +333,13 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="flex flex-col justify-start items-start w-[350px] mb-7 md:mb-0"
                 >
-                  <h1 className="text-4xl md:text-5xl">Solutions </h1>
-                  <h2 className="text-6xl md:text-[7rem] md:leading-22 font-light" ><CountUp from={0} to={15} separator="," direction="up" duration={4} className="count-up-text"  />k</h2>
-                  <p className="text-md text-left">We provide best customer service </p>
+                  <h1 className="text-4xl md:text-5xl">Experience </h1>
+                  <h2 className="text-6xl md:text-[7rem] md:leading-22 font-light" ><CountUp from={0} to={52} separator="," direction="up" duration={4} className="count-up-text"  /></h2>
+                  <p className="text-md text-left">We are Seasoned Professional in the Freight Forwarding Industry</p>
                 </motion.div>
            </div>
            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="md:w-[50%] w-full h-[500px] relative rounded-bl-none rounded-b-[30px] md:h-auto rounded-t-[30px] md:rounded-r-[30px] mx-auto px-4 overflow-hidden ">
-            <Image src="/bg-20.jpg" alt="Container image" fill className="object-cover" quality={100} priority />
+            <Image src="/bg-20.jpg" loading="lazy" alt="cargo ship at the apapa port getting loaded " fill className="object-cover" quality={100} priority />
             <div className="absolute inset-0 bg-black/0 z-10" />
           </motion.div>
         </section>
@@ -462,7 +381,7 @@ export default function Home() {
                           className="bg-white overflow-hidden p-0 relative h-[400px] w-[300px] flex flex-col justify-end rounded-2xl shadow-md border group hover:shadow-lg transition-all"
                         >
                           
-                          <Image src={team.img} alt={team.name} className="absolute hover:scale-[1.1] transition ease-out duration-700 inset-0 w-full h-full object-cover rounded-2xl" fill quality={100} priority />
+                          <Image src={team.img} loading="lazy" alt={team.name} className="absolute hover:scale-[1.1] transition ease-out duration-700 inset-0 w-full h-full object-cover rounded-2xl" fill quality={100} priority />
                           <div className=" backdrop-blur-xs group hover:bg-[#f087251c] transition-all duration-200 ease-in bg-[#f087251c] text-white p-6 z-10 flex flex-col items-center text-center">
                             
                             <h3 className="text-xl font-semibold mb-2">{team.name}</h3>
@@ -512,7 +431,7 @@ export default function Home() {
               Learn more from about us and what we offer twin 
             </motion.h2>
 
-            <motion.h2
+            {/* <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -520,7 +439,7 @@ export default function Home() {
               className="md:text-[20px] w-fit font-light text-left mb-4 py-3 px-0 text-[18px]"
             >
               more random word to out3 you what you u still dey form for me baby let me give you what you want
-            </motion.h2>
+            </motion.h2> */}
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -531,32 +450,42 @@ export default function Home() {
                 
               <Accordion type="single" collapsible className="w-full" defaultValue="item-1"> 
                 <AccordionItem className="border-1 rounded-md mb-5" value="item-1">
-                  <AccordionTrigger className=" px-2 border-b ">AI is the future of Logistics automation </AccordionTrigger>
-                  <AccordionContent className="flex flex-col gap-4 text-balance border-b">
-                    <p>
-                      Our flagship product combines cutting-edge technology with sleek
-                      design. Built with premium materials, it offers unparalleled
-                      performance and reliability.
+                  <AccordionTrigger className=" px-2 border-b ">What types of cargo do you handle? </AccordionTrigger>
+                  <AccordionContent className="flex p-2 flex-col gap-4 text-balance border-b">
+                    <p className="text-left">
+                      We handle a wide range of cargo including general goods, containerized shipments, bulk cargo, perishable items, industrial equipment, and high-value goods. If you have special cargo requirements, our team will work with you to ensure proper handling and compliance.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem className="border-1 rounded-md  mb-5" value="item-2">
-                  <AccordionTrigger className=" px-2 border-b ">Do you offer services world wide?</AccordionTrigger>
-                  <AccordionContent className="flex flex-col gap-4 text-balance border-b">
-                    <p>
-                      Our flagship product combines cutting-edge technology with sleek
-                      design. Built with premium materials, it offers unparalleled
-                      performance and reliability.
+                  <AccordionTrigger className=" px-2 border-b ">What is an Export Processing Terminal (EPT)?</AccordionTrigger>
+                  <AccordionContent className="flex p-2 flex-col gap-4 text-balance border-b">
+                    <p className="text-left">
+                      An EPT is a specialized facility that speeds up export processes by centralizing cargo inspection, documentation, and loading. Our EPT service reduces port congestion and simplifies compliance for exporters.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem className="border-1 rounded-md  mb-5" value="item-3">
-                  <AccordionTrigger className=" px-2 border-b ">How do I reach you ?</AccordionTrigger>
-                  <AccordionContent className="flex flex-col gap-4 text-balance border-b">
-                    <p>
-                      Our flagship product combines cutting-edge technology with sleek
-                      design. Built with premium materials, it offers unparalleled
-                      performance and reliability.
+                  <AccordionTrigger className=" px-2 border-b "> Can you handle both import and export shipments?</AccordionTrigger>
+                  <AccordionContent className="flex p-2 flex-col gap-4 text-balance border-b">
+                    <p className="text-left">
+                      Yes. We offer complete support for both import and export operations. From documentation and customs clearance to transportation and delivery, Harlink manages the full logistics process for businesses trading internationally.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem className="border-1 rounded-md  mb-5" value="item-4">
+                  <AccordionTrigger className=" px-2 border-b "> What is a bonded warehouse and why would I need one?</AccordionTrigger>
+                  <AccordionContent className="flex p-2 flex-col gap-4 text-balance border-b">
+                    <p className="text-left">
+                      A bonded warehouse allows you to store imported goods without paying customs duties immediately. This helps you manage inventory more efficiently, especially if goods are meant for re-export or phased distribution. Duties are only paid when goods leave the warehouse for local use.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem className="border-1 rounded-md  mb-5" value="item-5">
+                  <AccordionTrigger className=" px-2 border-b "> How long does customs clearance take?</AccordionTrigger>
+                  <AccordionContent className="flex p-2 flex-col gap-4 text-balance border-b">
+                    <p className="text-left">
+                      Clearance time depends on cargo type, documentation accuracy, and inspection requirements. However, with our experienced agents and strong relationships with regulatory bodies, we work to minimize delays. In many cases, clearance is completed within 24–72 hours after cargo arrival.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -565,7 +494,7 @@ export default function Home() {
 
           </div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="md:w-[50%] w-full h-[300px] relative rounded-[30px] md:h-auto mx-auto px-4 overflow-hidden ">
-            <Image src="/bg-41.jpg" alt="Container image" fill className="object-cover md:p-3 md:rounded-full " quality={100} priority />
+            <Image src="/bg-41.jpg" loading="lazy" alt="Frieght on a cargo ship with cranes behind at lagos port" fill className="object-cover md:p-3 md:rounded-full " quality={100} priority />
             {/* <div className="absolute inset-0 bg-black/40 z-10" /> */}
 
             <div className=" absolute bottom-1 md:bottom-17 z-10"><HoverCards title="Something hard" body="Be a good boy and ill give you money" icon={<PiShippingContainer  className="text-4xl text-indigo-500" />} /></div>

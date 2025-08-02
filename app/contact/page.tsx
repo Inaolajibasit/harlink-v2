@@ -67,7 +67,7 @@ export default function ContactForm() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl font-semibold mb-1">Reach Out to Us</h2>
+            <h1 className="text-2xl font-semibold mb-1">Reach Out to Us</h1>
             <p className="text-orange-500 mb-6">Let's Get Started</p>
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4 relative">
               <input name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First name" className="col-span-2 md:col-span-1 p-3 rounded-md border border-gray-300" required />
@@ -91,9 +91,9 @@ export default function ContactForm() {
           >
             <img src="/bg1.jpg" alt="Ship" className="rounded-xl object-cover w-full h-60 md:h-80" />
             <div className="bg-white rounded-xl p-6 shadow-md space-y-4">
-              <ContactItem emoji="📧" label="Email" value="inaolajibasit@gmail.com" />
-              <ContactItem emoji="📞" label="Phone" value="0808064916" />
-              <ContactItem emoji="📍" label="Address" value="Apapa port, Lagos, Nigeria" />
+              <ContactItem emoji="📧" label="Email" value="harlinkinvestment@gmail.com" />
+              <ContactItem emoji="📞" label="Phone" value="080330447379" />
+              <ContactItem emoji="📍" label="Address" value="34 Rhodes Crescent Apapa Lagos, Nigeria" />
             </div>
           </motion.div>
         </div>
