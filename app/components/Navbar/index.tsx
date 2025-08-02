@@ -71,7 +71,7 @@ export default function Navbar() {
             : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center gap-4 bg-white/90 backdrop-blur-md shadow-md py-6 text-lg font-medium">
+        <div className="flex flex-col items-center gap-4 bg-[#ffffff1f] backdrop-blur-sm shadow-md py-6 text-lg font-medium">
           <Link href="/" className="text-black hover:text-blue-600 transition" onClick={() => setIsOpen(false)}>Home</Link>
           <Link href="/#services" className="text-black hover:text-blue-600 transition" onClick={() => setIsOpen(false)}>Service</Link>
           <Link href="/aboutus" className="text-black hover:text-blue-600 transition" onClick={() => setIsOpen(false)}>About Us</Link>

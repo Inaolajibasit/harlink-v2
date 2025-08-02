@@ -106,17 +106,19 @@ export default function Home() {
             </motion.div>
             
           </div>
-          <div className="absolute overflow-hidden hidden  p-4 z-20 bottom-20 right-10 hover:rotate-135 transition w-[80px] cursor-pointer h-[80px] rounded-full text-black shadow-xl md:flex flex-col justify-between bg-white">
-            {/* <Image src='/cargo-ship.gif' alt="ship" fill quality={100}  /> */}
-            <BsArrowUpRightCircle className=" h-full w-full text-[#F08825]" />
-          </div>  
+          <Link href={'/#about'}>
+            <div className="absolute overflow-hidden hidden  p-4 z-20 bottom-20 right-10 hover:rotate-135 transition w-[80px] cursor-pointer h-[80px] rounded-full text-black shadow-xl md:flex flex-col justify-between bg-white">
+              {/* <Image src='/cargo-ship.gif' alt="ship" fill quality={100}  /> */}
+              <BsArrowUpRightCircle className=" h-full w-full text-[#F08825]" />
+            </div>  
+          </Link>
         </section>
 
         {/* logo carosel  */}
         <LogoCarousel />
         
         {/* about us section  */}
-        <section className=" md:mt-[10rem] md:flex-wrap md:mb-[10rem] w-full py-10 md:px-[20rem] my-10 px-6 h-[700px] relative flex flex-col md:flex-row overflow-hidden">
+        <section id="about" className=" md:mt-[10rem] md:flex-wrap md:mb-[10rem] w-full py-10 md:px-[20rem] my-10 px-6 h-[700px] relative flex flex-col md:flex-row overflow-hidden">
           <div className=" w-[100%] md:w-[40%] my-7 md:my-0 md:h-full flex flex-col items-start justify-between">
             <div>
               <motion.h2
@@ -497,7 +499,7 @@ export default function Home() {
             <Image src="/bg-41.jpg" loading="lazy" alt="Frieght on a cargo ship with cranes behind at lagos port" fill className="object-cover md:p-3 md:rounded-full " quality={100}  />
             {/* <div className="absolute inset-0 bg-black/40 z-10" /> */}
 
-            <div className=" absolute bottom-1 md:bottom-17 z-10"><HoverCards title="Something hard" body="Be a good boy and ill give you money" icon={<PiShippingContainer  className="text-4xl text-indigo-500" />} /></div>
+            <div className=" absolute bottom-1 md:bottom-17 z-10"><HoverCards title="Harlink" body="Full-Service Freight Solution made Simple  " icon={<PiShippingContainer  className="text-4xl text-indigo-500" />} /></div>
           </motion.div>
 
           <motion.div
