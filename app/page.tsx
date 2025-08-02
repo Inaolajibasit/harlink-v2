@@ -143,7 +143,7 @@ export default function Home() {
           </div>
           
           <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={inView ? {opacity: 1, y:0} : {}} transition={{duration:0.6}} className="w-[100%] md:w-[60%] h-full relative overflow-hidden rounded-4xl">
-            <Image src="/bg-29.jpg" loading="lazy" alt="bunch of yellow Containers stacked on each other ln apapa lagos " fill className="object-cover" quality={100} priority />
+            <Image src="/bg-29.jpg" loading="lazy" alt="bunch of yellow Containers stacked on each other ln apapa lagos " fill className="object-cover" quality={100}  />
             <div className="absolute inset-0 bg-black/60 z-10" />
             <motion.div  initial={{ opacity: 0, y: -40, scale:0.8 }} animate={inView ? {opacity: 1, y:0, scale:1,} : {}} transition={{duration:0.9}} className="absolute bg-[#ffffff45] z-20 text-white h-auto md:h-[300px] md:bottom-9 md:left-9 md:right-9 bottom-1 left-1 right-1 rounded-4xl backdrop-blur-sm flex justify-start items-end p-3 md:p-7" >
               <h1 className="md:text-[22px] text-[15px] leading-[1.2] md:leading-snug">Harlink Investment is a leading freight forwarding and logistics company based in Lagos Nigeria. With a strong presence across major ports and trade routes, we specialize in shipping, customs clearance, bonded warehousing, haulage, and comprehensive import-export services.  <span className="text-[#f08825] "> Our goal is to simplify trade for businesses of all sizes by offering reliable, end-to-end logistics solutions. </span> </h1>
@@ -206,7 +206,7 @@ export default function Home() {
                           className="absolute hover:scale-[1.1] transition ease-out duration-700 inset-0 w-full h-full object-cover rounded-2xl "
                           fill
                           quality={100}
-                          priority
+                          
                         />
                         <div className=" backdrop-blur-xs group hover:bg-[#f087251c] transition-all duration-200 ease-in bg-[#ffffff45] text-white p-6 z-10 flex flex-col items-center text-center">
                           <Image src={service.iconGif} loading="lazy" alt="animated icons of harlink lagos port activity " width={50} height={50} />
@@ -280,7 +280,7 @@ export default function Home() {
 
           </div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="md:w-[50%] w-full h-[300px] relative rounded-bl-none rounded-b-[30px] md:h-auto md:rounded-r-[30px] bg-amber-300 mx-auto px-4 overflow-hidden ">
-            <Image src="/bg-293.jpg" loading="lazy" alt="empty cargo sitting still on the lagos water" fill className="object-cover" quality={100} priority />
+            <Image src="/bg-293.jpg" loading="lazy" alt="empty cargo sitting still on the lagos water" fill className="object-cover" quality={100}  />
             <div className="absolute inset-0 bg-black/40 z-10" />
           </motion.div>
 
@@ -339,7 +339,7 @@ export default function Home() {
                 </motion.div>
            </div>
            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="md:w-[50%] w-full h-[500px] relative rounded-bl-none rounded-b-[30px] md:h-auto rounded-t-[30px] md:rounded-r-[30px] mx-auto px-4 overflow-hidden ">
-            <Image src="/bg-20.jpg" loading="lazy" alt="cargo ship at the apapa port getting loaded " fill className="object-cover" quality={100} priority />
+            <Image src="/bg-20.jpg" loading="lazy" alt="cargo ship at the apapa port getting loaded " fill className="object-cover" quality={100}  />
             <div className="absolute inset-0 bg-black/0 z-10" />
           </motion.div>
         </section>
@@ -381,7 +381,7 @@ export default function Home() {
                           className="bg-white overflow-hidden p-0 relative h-[400px] w-[300px] flex flex-col justify-end rounded-2xl shadow-md border group hover:shadow-lg transition-all"
                         >
                           
-                          <Image src={team.img} loading="lazy" alt={team.name} className="absolute hover:scale-[1.1] transition ease-out duration-700 inset-0 w-full h-full object-cover rounded-2xl" fill quality={100} priority />
+                          <Image src={team.img} loading="lazy" alt={team.name} className="absolute hover:scale-[1.1] transition ease-out duration-700 inset-0 w-full h-full object-cover rounded-2xl" fill quality={100}  />
                           <div className=" backdrop-blur-xs group hover:bg-[#f087251c] transition-all duration-200 ease-in bg-[#f087251c] text-white p-6 z-10 flex flex-col items-center text-center">
                             
                             <h3 className="text-xl font-semibold mb-2">{team.name}</h3>
@@ -494,7 +494,7 @@ export default function Home() {
 
           </div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="md:w-[50%] w-full h-[300px] relative rounded-[30px] md:h-auto mx-auto px-4 overflow-hidden ">
-            <Image src="/bg-41.jpg" loading="lazy" alt="Frieght on a cargo ship with cranes behind at lagos port" fill className="object-cover md:p-3 md:rounded-full " quality={100} priority />
+            <Image src="/bg-41.jpg" loading="lazy" alt="Frieght on a cargo ship with cranes behind at lagos port" fill className="object-cover md:p-3 md:rounded-full " quality={100}  />
             {/* <div className="absolute inset-0 bg-black/40 z-10" /> */}
 
             <div className=" absolute bottom-1 md:bottom-17 z-10"><HoverCards title="Something hard" body="Be a good boy and ill give you money" icon={<PiShippingContainer  className="text-4xl text-indigo-500" />} /></div>
