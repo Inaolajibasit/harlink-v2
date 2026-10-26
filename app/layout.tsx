@@ -1,85 +1,43 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Montserrat,
-  Golos_Text,
-} from "next/font/google";
+import { Geist, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { icons } from "lucide-react";
+import "./inner-pages.css";
+import "./opening-sequence.css";
+import { OpeningSequence } from "./components/site/opening-sequence";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-});
-
-const golosText = Golos_Text({
-  variable: "--font-golos-text",
-  subsets: ["latin"],
-});
-
-const geistSans = Geist({
+const geist = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
+  display: "swap",
 });
-
-// ✅ Add favicon to metadata
-
 
 export const metadata: Metadata = {
-  title: "Harlink Investment – Freight Forwarding & Logistics Experts in Lagos",
+  title: "Harlink Investment | Export Agency & Trade Facilitation",
   description:
-    "Harlink Investment offers top-tier freight forwarding, customs clearance, and logistics solutions across Nigeria. Based in Apapa Port, Lagos.",
-  icons: {
-    icon: "/favicon.svg",
-  }, 
-  keywords: [
-    "freight forwarding",
-    "customs clearance",
-    "logistics Nigeria",
-    "shipping company Lagos",
-    "import export Lagos",
-    "Ept Export processing terminal",  
-    "shipping", 
-    "Harlink", 
-    "cargo", 
-    "Nigeria"
-  ],
+    "Harlink supports businesses exporting from Nigeria through export documentation, regulatory coordination, advisory and supporting cargo logistics.",
+  icons: { icon: "/favicon.svg" },
   openGraph: {
-    title: "Harlink Investment – Freight Forwarding & Logistics Experts",
+    title: "Harlink Investment | Export Agency & Trade Facilitation",
     description:
-      "Reliable logistics and freight forwarding services from Apapa Port, Lagos. Trusted by businesses across Nigeria.",
-    url: "https://harlinkinvestment.com",
+      "The work behind every export. Documentation, coordination and supporting cargo services for exports from Nigeria.",
     siteName: "Harlink Investment",
-    images: [
-      {
-        url: "/bg1.jpg", // Create a custom image in public folder
-        width: 1200,
-        height: 630,
-        alt: "Harlink Investment – Logistics Solutions",
-      },
-    ],
-    locale: "en_US",
+    locale: "en_NG",
     type: "website",
   },
 };
 
-
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
-      >
+      <body className={`${geist.variable} ${jakarta.variable} antialiased`}>
+        <OpeningSequence />
         {children}
       </body>
     </html>
